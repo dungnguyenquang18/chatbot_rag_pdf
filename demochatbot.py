@@ -8,7 +8,7 @@ from langchain_community.vectorstores import FAISS
 os.environ["GOOGLE_API_KEY"] = ""  # Thay bằng API key của bạn
 
 # Đường dẫn database vector
-vector_db_path = "E:/umbalaxibua/paragame_olympic/vectorstores/db_faiss"
+vector_db_path = "vectorstores/db_faiss"
 
 # Load LLM từ API Gemini
 def load_llm():

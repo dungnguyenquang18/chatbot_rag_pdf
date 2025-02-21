@@ -5,8 +5,8 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import os
 
 # Khai bao bien
-pdf_data_path = "E:/umbalaxibua/paragame_olympic/data"
-vector_db_path = "E:/umbalaxibua/paragame_olympic/vectorstores/db_faiss"
+pdf_data_path = "data"
+vector_db_path = "vectorstores/db_faiss"
 
 def create_db_from_files():
     # Load all PDFs from the folder

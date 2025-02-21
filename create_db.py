@@ -18,7 +18,7 @@ def create_db_from_files():
     chunks = text_splitter.split_documents(documents)
     print('Done chunking')
     # Set up Gemini API key
-    os.environ["GOOGLE_API_KEY"] = ""  # Thay bằng API key của bạn
+    os.environ["GOOGLE_API_KEY"] = "AIzaSyC66m4Y8VHdFZR_YjcvHOw7ThcY6v2or4g"  # Thay bằng API key của bạn
 
     # Use Gemini embedding model
     embedding_model = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")

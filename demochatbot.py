@@ -5,7 +5,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmb
 from langchain_community.vectorstores import FAISS
 
 # Cấu hình API Key của Gemini
-os.environ["GOOGLE_API_KEY"] = ""  # Thay bằng API key của bạn
+os.environ["GOOGLE_API_KEY"] = "AIzaSyC66m4Y8VHdFZR_YjcvHOw7ThcY6v2or4g"  # Thay bằng API key của bạn
 
 # Đường dẫn database vector
 vector_db_path = "E:/umbalaxibua/paragame_olympic/vectorstores/db_faiss"

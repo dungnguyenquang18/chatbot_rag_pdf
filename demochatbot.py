@@ -3,16 +3,21 @@ from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Cấu hình API Key của Gemini
-os.environ["GOOGLE_API_KEY"] = ""  # Thay bằng API key của bạn
+os.environ["GOOGLE_API_KEY"] = os.getenv('API_KEY') # Thay bằng API key của bạn
 
 # Đường dẫn database vector
 vector_db_path = "vectorstores/db_faiss"
 
 # Load LLM từ API Gemini
 def load_llm():
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro", temperature=0.01)
+    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.01)
     return llm
 
 # Tạo prompt template
@@ -65,6 +70,6 @@ if __name__ == '__main__':
     chatbot = Chatbot()
 
     # Chạy chain với câu hỏi
-    question = "Why There Is No Documentation Phase"
+    question = "abcxyz"
     
     print(chatbot.answer(question=question))

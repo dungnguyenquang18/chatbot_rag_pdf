@@ -3,6 +3,10 @@ from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
 from langchain_community.vectorstores import FAISS
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Khai bao bien
 pdf_data_path = "data"
@@ -18,7 +22,7 @@ def create_db_from_files():
     chunks = text_splitter.split_documents(documents)
     print('Done chunking')
     # Set up Gemini API key
-    os.environ["GOOGLE_API_KEY"] = ""  # Thay bằng API key của bạn
+    os.environ["GOOGLE_API_KEY"] = os.getenv('API_KEY')  # Thay bằng API key của bạn
 
     # Use Gemini embedding model
     embedding_model = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
